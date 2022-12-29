@@ -1,1 +1,4 @@
-# ash_serial
+# Ash.Serial
+
+- https://github.com/samuelventura/sport
+- https://github.com/samuelventura/sniff
