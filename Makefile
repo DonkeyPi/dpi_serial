@@ -6,7 +6,6 @@ UNAME := $(shell uname -s | tr '[:upper:]' '[:lower:]')
 SRCDIR = src
 PRIVDIR = priv
 OUTDIR = $(PRIVDIR)/$(MIX_TARGET)
-LOCBIN = ~/.local/bin
 
 #-pedantic -Wall allow unused during debugging
 #-Werror remove to run on macos with lots of warnings
@@ -36,5 +35,5 @@ reset: clean
 	rm -fr _build deps
 	rm Makefile.*.env
 
-$(PORT_TARGET): $(PORT_SOURCES) $(PORT_HEADERS) Makefile $(FONTS) $(IMAGES) $(TARGET_CAIRO)
+$(PORT_TARGET): $(PORT_SOURCES) $(PORT_HEADERS) Makefile
 	$(CC) $(PORT_CFLAGS) $(PORT_SOURCES) $(PORT_LDFLAGS) -o $@

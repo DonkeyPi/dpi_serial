@@ -1,6 +1,10 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
+#ifdef __APPLE__
+#define _DARWIN_C_SOURCE
+#endif
+
 #include <stdarg.h>
 #include <stdio.h>
 #include <errno.h>
