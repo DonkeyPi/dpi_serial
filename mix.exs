@@ -1,4 +1,4 @@
-defmodule AshSerial.MixProject do
+defmodule Ash.Serial.MixProject do
   use Mix.Project
 
   def project do
