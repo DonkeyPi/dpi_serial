@@ -1,6 +1,7 @@
 defmodule Ash.Serial.ConfigTest do
   use ExUnit.Case
   alias Ash.Serial.Port
+  alias Ash.Serial.Params
 
   setup do
     pid = Socat.start()
@@ -8,18 +9,9 @@ defmodule Ash.Serial.ConfigTest do
   end
 
   test "valid config test" do
-    test_config("8N1")
-    test_config("8N2")
-    test_config("8E1")
-    test_config("8E2")
-    test_config("8O1")
-    test_config("8O2")
-    test_config("7N1")
-    test_config("7N2")
-    test_config("7E1")
-    test_config("7E2")
-    test_config("7O1")
-    test_config("7O2")
+    for config <- Params.config() do
+      test_config(config)
+    end
   end
 
   defp test_config(config) do
