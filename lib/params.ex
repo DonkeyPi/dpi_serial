@@ -1,4 +1,4 @@
-defmodule Ash.Serial.Params do
+defmodule Dpi.Serial.Params do
   @configs [
     "8N1",
     "8N2",

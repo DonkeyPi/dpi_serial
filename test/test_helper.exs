@@ -1,7 +1,7 @@
 ExUnit.start()
 
 defmodule Tests do
-  alias Ash.Serial.Port
+  alias Dpi.Serial.Port
 
   @toms 200
 
@@ -32,8 +32,8 @@ defmodule Tests do
 end
 
 defmodule Socat do
-  @socat0 "/tmp/ash.socat0"
-  @socat1 "/tmp/ash.socat1"
+  @socat0 "/tmp/dpi.socat0"
+  @socat1 "/tmp/dpi.socat1"
   @args ["-d", "-d", "pty,link=#{@socat0}", "pty,link=#{@socat1}"]
   @toms 200
 

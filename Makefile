@@ -9,7 +9,7 @@ OUTDIR = $(PRIVDIR)/$(MIX_TARGET)
 
 #-pedantic -Wall allow unused during debugging
 #-Werror remove to run on macos with lots of warnings
-PORT_TARGET = $(OUTDIR)/ash_serial
+PORT_TARGET = $(OUTDIR)/dpi_serial
 PORT_SOURCES = $(SRCDIR)/*.c
 PORT_HEADERS = $(SRCDIR)/*.h
 PORT_CFLAGS = -g0 -O3 -pedantic -Wall -Wextra -D_XOPEN_SOURCE=700

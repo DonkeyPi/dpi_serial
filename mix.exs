@@ -1,9 +1,9 @@
-defmodule Ash.Serial.MixProject do
+defmodule Dpi.Serial.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :ash_serial,
+      app: :dpi_serial,
       version: "0.1.0",
       elixir: "~> 1.13",
       make_clean: ["clean"],

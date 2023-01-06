@@ -29,24 +29,24 @@
 #define UNUSED3(x,y,z) UNUSED(x);UNUSED(y);UNUSED(z);
 // #define MAX(x, y) ((x)>(y)?(x):(y))
 
-void ash_debug(const char* fmt, ...);
-void ash_crash(const char* fmt, ...);
+void dpi_debug(const char* fmt, ...);
+void dpi_crash(const char* fmt, ...);
 
 // #define __TRACE_ENABLED__
 
 #ifdef __TRACE_ENABLED__
 
-#define ash_trace(...) ash_debug(__VA_ARGS__)
-#define ash_trace_every() ash_trace("%s:%s tid:%ul", __FILE__, __func__, pthread_self());
-#define ash_trace_once() static bool _##__func__ = false; \
-    if (!_##__func__) ash_trace_every(); \
+#define dpi_trace(...) dpi_debug(__VA_ARGS__)
+#define dpi_trace_every() dpi_trace("%s:%s tid:%ul", __FILE__, __func__, pthread_self());
+#define dpi_trace_once() static bool _##__func__ = false; \
+    if (!_##__func__) dpi_trace_every(); \
     _##__func__ = true;
 
 #else
 
-#define ash_trace(...)
-#define ash_trace_every()
-#define ash_trace_once()
+#define dpi_trace(...)
+#define dpi_trace_every()
+#define dpi_trace_once()
 
 #endif
 
@@ -59,8 +59,8 @@ typedef struct {
   const char *config; // 8N1 | 7E1 | 7O1
 } Serial;
 
-void ash_debug(const char* fmt, ...);
-void ash_crash(const char* fmt, ...);
+void dpi_debug(const char* fmt, ...);
+void dpi_crash(const char* fmt, ...);
 
 int serial_baud(int speed);
 void serial_open(Serial *serial);

@@ -13,7 +13,7 @@
 # {"ttyUSB2", "FTDI_USB_<->_Serial_Cable_FT0K2HYD_2"},
 # {"ttyUSB3", "FTDI_USB_<->_Serial_Cable_FT0K2HYD_3"}
 
-defmodule Ash.Serial.List do
+defmodule Dpi.Serial.List do
   def find(name) do
     Enum.find_value(list(), name, fn {dev, aka} ->
       if name == dev or name == aka, do: dev

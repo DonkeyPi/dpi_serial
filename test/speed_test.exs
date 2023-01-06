@@ -1,7 +1,7 @@
-defmodule Ash.Serial.SpeedTest do
+defmodule Dpi.Serial.SpeedTest do
   use ExUnit.Case
-  alias Ash.Serial.Port
-  alias Ash.Serial.Params
+  alias Dpi.Serial.Port
+  alias Dpi.Serial.Params
 
   setup do
     pid = Socat.start()

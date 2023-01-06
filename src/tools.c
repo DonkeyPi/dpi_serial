@@ -1,6 +1,6 @@
 #include "main.h"
 
-void ash_debug(const char* fmt, ...) 
+void dpi_debug(const char* fmt, ...) 
 {
     va_list ap;
     va_start(ap, fmt);
@@ -10,7 +10,7 @@ void ash_debug(const char* fmt, ...)
     fflush(stderr);
 }
 
-void ash_crash(const char* fmt, ...) 
+void dpi_crash(const char* fmt, ...) 
 {
     va_list ap;
     va_start(ap, fmt);

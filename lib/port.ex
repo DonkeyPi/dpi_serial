@@ -1,4 +1,4 @@
-defmodule Ash.Serial.Port do
+defmodule Dpi.Serial.Port do
   @opts [:path, :config, :speed]
 
   def open(opts) do
@@ -8,9 +8,9 @@ defmodule Ash.Serial.Port do
       end
 
     opts = [:binary, :exit_status, :stream, args: args]
-    priv = :code.priv_dir(:ash_serial)
+    priv = :code.priv_dir(:dpi_serial)
     target = File.read!("#{priv}/target") |> String.trim()
-    Port.open({:spawn_executable, '#{priv}/#{target}/ash_serial'}, opts)
+    Port.open({:spawn_executable, '#{priv}/#{target}/dpi_serial'}, opts)
   end
 
   def write!(port, iodata) do
