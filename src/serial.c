@@ -76,7 +76,12 @@ void serial_open(Serial *serial)
 {
   struct termios *fdt = &serial->fdt;
   memset(fdt, 0, sizeof(struct termios));
+  #ifdef __linux__
   serial->fd = open(serial->path, O_RDWR | O_NOCTTY);
+  #endif
+  #ifdef __APPLE__
+  serial->fd = open(serial->path, O_RDWR | O_NOCTTY | O_NDELAY);
+  #endif
   if (serial->fd < 0) {
     serial->error = "open failed";
     return;

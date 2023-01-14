@@ -9,7 +9,7 @@ char* dpi_arg(const char *str, const char *pre)
 
 #define DATA_LEN 256
 
-//dpi_serial --path=/dev/ttyUSB0 --config=8N1 --speed=9600
+//priv/host/dpi_serial --config=8N1 --speed=9600 --path=/dev/ttyUSB0
 int main(int argc, char *argv[]) 
 {
   UNUSED(argc);
