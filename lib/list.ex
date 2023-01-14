@@ -32,7 +32,7 @@ defmodule Dpi.Serial.List do
   end
 
   defp list_darwin() do
-    for path <- Enum.sort(list_ttys()) do
+    for path <- Enum.sort(Path.wildcard("/dev/tty.*")) do
       name = Path.basename(path)
       {name, nil}
     end
