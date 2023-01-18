@@ -27,8 +27,12 @@ defmodule Dpi.Serial.List do
     end
   end
 
+  # ttyAMA0 rpi pseudo serial port
+  # ttyACM0 honeywell usb-serial 1472G1D
   defp list_ttys() do
-    Path.wildcard("/dev/ttyS*") ++ Path.wildcard("/dev/ttyUSB*")
+    Path.wildcard("/dev/ttyS*") ++
+      Path.wildcard("/dev/ttyUSB*") ++
+      Path.wildcard("/dev/ttyACM*")
   end
 
   defp list_darwin() do
